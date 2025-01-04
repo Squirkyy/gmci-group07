@@ -13,12 +13,11 @@
             <h1>Uploade deine Assignment hier!</h1>
         </header>
         <main>
-          <p>UPLOADE HIER DEINE LÖSUNG:</p>
-          <form>
+          <p>Hier deine Lösung uploaden:</p>
+          <form method="post" id="upfile" enctype="multipart/form-data">
             <input type="file" name="ufi" value="filename">
             <input type="submit">
           </form>
-          <p>Download:</p>
         </main>
         <footer>
             <div></div>
@@ -26,6 +25,6 @@
             <div>Angemeldet als Student</div>
         </footer>
     </div>
-    <script src="script.js"></script>
+    <script src="formhandler.js"></script>
 </body>
 </html>
