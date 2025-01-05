@@ -10,3 +10,13 @@ function onLoad() {
         window.location.href = '../../index.html';
     }
 }
+
+function logout() {
+    document.getElementById('logoutButton').addEventListener('click', function () {
+        // Clear localStorage
+        localStorage.clear();
+
+        // Redirect to the login page
+        window.location.href = 'index.html';
+    });
+}

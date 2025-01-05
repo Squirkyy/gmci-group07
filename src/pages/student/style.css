@@ -91,3 +91,27 @@ footer div:nth-child(3) {
   
     text-decoration: line-through;
 }
+.content-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  .form-section,
+  .previous {
+    flex: 1;
+  }
+  
+  .form-section {
+    max-width: 55%; 
+  }
+  
+  .previous {
+    max-width: 45%; 
+  }
+
+  @media (max-width: 768px) {
+    .form-section, .previous {
+        max-width: 100%;
+    }
+}

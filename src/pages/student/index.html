@@ -9,6 +9,7 @@
     <script>
         window.onload = function () {
             onLoad();
+            renderCourses();
         };
     </script>
     <title>Assignmentsystem</title>
@@ -20,11 +21,11 @@
         </header>
         <main>
           <div id="bod">
-            <p>Wähle Kurs</p>
-            <a href="pages/student/submit.html">
-              <button>steve jobs (kurs)</button>
-            </a>
+            <p>Wähle einen Kurs aus, um dein Assignment abzugeben:</p>
+            <ul id="courses"></ul>
 
+            <p><i>Kursiv</i> bedeutet, dass der Kurs aktuell keine Abgaben annimmt. <br>
+            <strong>Fett</strong> bedeutet, dass der Kurs aktuell Abgaben annimmt.</p>
           </div>
         </main>
         <footer>

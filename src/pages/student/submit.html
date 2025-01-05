@@ -1,43 +1,62 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    
-    <title>Assignmentsystem</title>
-</head>
-<body>
-    <div class="container">
-        <header>
-            <h1>Uploade deine Assignment hier!</h1>
-        </header>
-        <main>
-          <p>Hier deine Lösung uploaden:</p>
-          <form method="post" id="upfile" enctype="multipart/form-data">
-            <input type="file" name="ufi" value="filename">
-            <input type="submit">
-          </form>
-        </main>
-        <footer>
-            <div></div>
-            <div>&copy; 2025 Assignment Submission System. All rights reserved.</div>
-            <div>Angemeldet als Student</div>
-        </footer>
-    </div>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="style.css">
+		<script src="script.js" defer></script>
 
-    <!-- The Modal -->
-    <div id="myModal" class="modal">
-
-
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <div id="captcha_string" class="captcha_it"></div>
-            <input type="text" id="bar"><br><br>
-            <button type="button" onclick="compareto()">Confirm</button>
-        </div>
-  
-  </div>
-    <script src="formhandler.js"></script>
-</body>
+		<script>
+			window.onload = function () {
+				onLoad();
+				renderAssignments();
+			};
+		</script>
+		<title>Assignmentsystem</title>
+	</head>
+	<body>
+		<div class="container">
+			<header>
+				<h1>Uploade deine Assignment hier!</h1>
+			</header>
+			<main>
+				<div class="content-container">
+					<section class="form-section">
+                        <h2>Abgabe für <i>GMCI Nr. 10</i></h2>
+						<form method="post" id="upfile" enctype="multipart/form-data">
+						    <label for="fileuploader">Hier deine Lösung uploaden</label> <br>
+							<input type="file" name="ufi" value="filename" id="fileuploader"> <br>
+							<label for="feedback">Anonymes Feedback:</label><br>
+							<textarea id="feedback" name="feedback" rows="4" cols="50">
+							</textarea>
+							<br>
+							<input type="submit" value="Assignment abgeben">
+						</form>
+					</section>
+					<section class="previous">
+						<h2>Vorherige Abgaben</h2>
+						<ul id="assignments"></ul>
+						<p id="totalScore"></p>
+                        <h3>Fragen?</h3>
+						<p>Melde dich bei deinem Tutor und kläre gebenfalls Fragen, die du zu deiner Bewertung hast.</p>
+						<button onclick="location.href='mailto:vollmer@stud.uni-hannover.de?subject=Fragen%20zum%20GMCI%20Assignment';">Email Professor Vollmer</button>
+					</section>
+				</div>
+			</main>
+			<footer>
+				<div></div>
+				<div>&copy; 2025 Assignment Submission System. All rights reserved.</div>
+				<div id="loginstatus">Angemeldet als</div>
+			</footer>
+		</div>
+		<div id="myModal" class="modal">
+			<div class="modal-content">
+				<span class="close">&times;</span>
+				<div id="captcha_string" class="captcha_it"></div>
+				<input type="text" id="bar"><br><br>
+				<button type="button" onclick="compareto()">Confirm</button>
+			</div>
+		</div>
+		<script src="formhandler.js"></script>
+	</body>
 </html>
