@@ -1,6 +1,6 @@
 const users = [
-  { username: 'student', password: '123', role: 'student' },
-  { username: 'tutor', password: '321', role: 'tutor' }
+  { username: 'Darius', password: '123', role: 'Student' },
+  { username: 'Thomas', password: '321', role: 'Tutor' }
 ];
 
 document.getElementById('loginForm').addEventListener('submit', function (event) {
@@ -12,11 +12,17 @@ document.getElementById('loginForm').addEventListener('submit', function (event)
   const user = users.find(user => user.username === username && user.password === password);
 
   if (user) {
-      if (user.role === 'student') {
-          window.location.href = 'pages/student/index.html';
-      } else if (user.role === 'tutor') {
-          window.location.href = 'pages/tutor/index.html';
-      }
+    // Save user info in localStorage
+    localStorage.setItem('username', user.username);
+    localStorage.setItem('role', user.role);
+
+    // Log to verify that data is saved
+    if (user.role === 'Student') {
+        window.location.href = 'pages/student/index.html';
+    } else if (user.role === 'Tutor') {
+        window.location.href = 'pages/tutor/index.html';
+    }
+	
   } else {
       alert('Username oder Passwort ist falsch!');
   }
