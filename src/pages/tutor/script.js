@@ -116,6 +116,22 @@ function renderAssignments() {
         { id: 9, name: 'Assignment 9', number: 9, dueDate: '2024-06-01', isSubmitted: false },
         { id: 10, name: 'Assignment 10', number: 10, dueDate: '2025-01-10', isSubmitted: false }
     ];
+    const students = [
+        {name: "Hubert Aiwanger 1", ass: assignments},
+        {name: "Hubert Aiwanger 2", ass: []},
+        {name: "Hubert Aiwanger 3", ass: []},
+        {name: "Hubert Aiwanger 4", ass: []},
+    ];
+
+    const dropdown = document.getElementById("student_select");
+
+    students.forEach(student => {
+        const item = document.createElement("option");
+        item.innerText = student.name;
+        dropdown.appendChild(item);
+    });
+
+
 
     const container = document.getElementById("assignments");
     const totalScoreContainer = document.getElementById("totalScore");
