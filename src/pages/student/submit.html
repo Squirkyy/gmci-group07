@@ -25,12 +25,16 @@
                         <h2>Abgabe für <i>GMCI Nr. 10</i></h2>
 						<form method="post" id="upfile" enctype="multipart/form-data">
 						    <label for="fileuploader">Hier deine Lösung uploaden</label> <br>
-							<input type="file" name="ufi" value="filename" id="fileuploader"> <br>
+							<input type="file" name="ufi" value="filename" id="fileuploader">
+							<!-- Benutzerdefinierter Button -->
+							<label for="fileuploader" class="button-upload">Datei hochladen</label>
+							<div><span class="file-name" id="file-name">Keine Datei ausgewählt</span></div>
+							<br>
 							<label for="feedback">Anonymes Feedback:</label><br>
 							<textarea id="feedback" name="feedback" rows="4" cols="50">
 							</textarea>
 							<br>
-							<input type="submit" value="Assignment abgeben">
+							<input class="button-submit" type="submit" value="Assignment abgeben">
 						</form>
 					</section>
 					<section class="previous">
@@ -39,7 +43,7 @@
 						<p id="totalScore"></p>
                         <h3>Fragen?</h3>
 						<p>Melde dich bei deinem Tutor und kläre gebenfalls Fragen, die du zu deiner Bewertung hast.</p>
-						<button onclick="location.href='mailto:vollmer@stud.uni-hannover.de?subject=Fragen%20zum%20GMCI%20Assignment';">Email Professor Vollmer</button>
+						<button class="button-email" onclick="location.href='mailto:vollmer@stud.uni-hannover.de?subject=Fragen%20zum%20GMCI%20Assignment';">Email Professor Vollmer</button>
 					</section>
 				</div>
 			</main>

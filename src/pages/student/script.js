@@ -1,3 +1,18 @@
+ // Hole den Datei-Input und das Element zur Anzeige des Dateinamens
+ const fileInput = document.getElementById('fileuploader');
+ const fileNameDisplay = document.getElementById('file-name');
+
+ // Event-Listener für Änderungen im Datei-Input
+ fileInput.addEventListener('change', function () {
+     if (fileInput.files.length > 0) {
+         // Hole den Namen der ausgewählten Datei
+         fileNameDisplay.textContent = fileInput.files[0].name;
+     } else {
+         // Falls keine Datei ausgewählt ist
+         fileNameDisplay.textContent = 'Keine Datei ausgewählt';
+     }
+ });
+
 function onLoad() {
     const username = localStorage.getItem('username');
     const role = localStorage.getItem('role');
@@ -49,15 +64,19 @@ function renderCourses() {
         const item = document.createElement("li");
         if (course.isActive) {
         item.innerHTML = `
+            <div class="ul-item">
             <a href="submit.html"><strong>${course.name}</strong></a> Assignment Nr. ${course.assignments.length}<br>
             (Kurz: ${course.code}) <br> 
             Dozent: ${course.instructor} <br>
             Abgabe bis zum ${course.assignments[course.assignments.length-1].dueDate}
+            </div>
         `;
         } else {
             item.innerHTML = `
+            <div class="ul-item">
             <i>${course.name}</i><br> 
             (Kurz: ${course.code}) - Dozent: ${course.instructor}
+            </div>
         `;
         }
 
@@ -97,18 +116,22 @@ function renderAssignments() {
         const item = document.createElement("li");
         if (assignment.isSubmitted) {
             item.innerHTML = `
+                <div class="assignment">
                 <strong>${assignment.name}</strong> - Assignment Nr. ${assignment.number} <br>
                 Due Date: ${assignment.dueDate} <br>
                 Submitted: Yes (Score: ${assignment.score}) <br>
-                <button onclick="location.href='mailto:vollmer@stud.uni-hannover.de?subject=Fragen%20zum%20GMCI%20Assignment%20${assignment.number}&body=Meine%20Damen%20und%20Herren,%0D%0A%0D%0AMein%20Name%20ist%20${username}.%20Ich%20habe%20eine%20Frage%20zum%20${assignment.name}%20(Assignment%20Nr.%20${assignment.number}).%0D%0A%0D%0AVielen%20Dank%20im%20Voraus.';">Email an den Tutor</button>
+                <button class="button-email" onclick="location.href='mailto:vollmer@stud.uni-hannover.de?subject=Fragen%20zum%20GMCI%20Assignment%20${assignment.number}&body=Meine%20Damen%20und%20Herren,%0D%0A%0D%0AMein%20Name%20ist%20${username}.%20Ich%20habe%20eine%20Frage%20zum%20${assignment.name}%20(Assignment%20Nr.%20${assignment.number}).%0D%0A%0D%0AVielen%20Dank%20im%20Voraus.';">Email an den Tutor</button>
+                </div>
             `;
             totalAchievedPoints += assignment.score;
         } else {
             item.innerHTML = `
+                <div class="assignment">    
                 <strong>${assignment.name}</strong> - Assignment Nr. ${assignment.number} <br>
                 Due Date: ${assignment.dueDate} <br>
                 Submitted: No <br>
                 <button onclick="location.href='mailto:vollmer@stud.uni-hannover.de?subject=Fragen%20zum%20GMCI%20Assignment%20${assignment.number}&body=Meine%20Damen%20und%20Herren,%0D%0A%0D%0AMein%20Name%20ist%20${username}.%20Ich%20habe%20eine%20Frage%20zum%20${assignment.name}%20(Assignment%20Nr.%20${assignment.number}).%0D%0A%0D%0AVielen%20Dank%20im%20Voraus.';">Email an den Tutor</button>
+                </div>
             `;
         }
 

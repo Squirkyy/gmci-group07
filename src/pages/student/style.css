@@ -91,6 +91,7 @@ footer div:nth-child(3) {
   
     text-decoration: line-through;
 }
+
 .content-container {
     display: flex;
     justify-content: space-between;
@@ -114,4 +115,96 @@ footer div:nth-child(3) {
     .form-section, .previous {
         max-width: 100%;
     }
+}
+
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.ul-item {
+    border: 1px solid #c4c4c4;
+    margin-bottom: 10px;
+    padding: 10px;
+    max-width: 750px;
+    background-color: #dddddd;
+    border-radius: 10px;
+}
+
+.ul-item:hover {
+    background-color: #c4c4c4;
+}
+
+.assignment {
+    padding: 0px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgb(153, 153, 153);
+}
+
+.button-email {
+    text-decoration: none;
+    border: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 200px;
+    height: 30px;
+    font-size: small;
+    background-color: #dddddd;
+    border-radius: 4px;
+    border: 1px solid #c4c4c4;
+}
+
+.button-email:hover {
+    background-color: #c4c4c4;
+}
+
+#fileuploader {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 50%;
+    height: 30px;
+}
+
+/* Verstecke den Standard-Input */
+#fileuploader {
+    display: none;
+}
+
+
+.button-upload {
+    text-decoration: none;
+    border: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 200px;
+    height: 10px;
+    font-size: small;
+    background-color: #dddddd;
+    border-radius: 4px;
+    display: flex; /* Ändern Sie inline-block zu flex */
+    justify-content: center; /* Horizontale Zentrierung */
+    align-items: center; /* Vertikale Zentrierung */
+    cursor: pointer;
+    padding: 10px 20px;
+    border: 1px solid #c4c4c4;
+}
+
+.button-upload:hover {
+    background-color: #c4c4c4;
+}
+
+.file-name {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-size: 14px;
+    font-style: italic;
 }
