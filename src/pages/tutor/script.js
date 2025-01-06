@@ -123,10 +123,13 @@ function renderAssignments() {
         {name: "Hubert Aiwanger 4", ass: []},
     ];
 
+    // fetch dropdown
     const dropdown = document.getElementById("student_select");
 
+    // add students' names to dropdown
     students.forEach(student => {
         const item = document.createElement("option");
+        item.value = student.name;
         item.innerText = student.name;
         dropdown.appendChild(item);
     });
@@ -165,7 +168,6 @@ function renderAssignments() {
                 <strong>${assignment.name}</strong> - Assignment Nr. ${assignment.number} <br>
                 Due Date: ${assignment.dueDate} <br>
                 Submitted: No <br>
-                <button class="button-email" onclick="">Download</button>
                 </div>
             `;
         }
