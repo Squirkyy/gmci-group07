@@ -29,7 +29,8 @@ function compareto(){
 
 function send_to_heaven() {
   event.preventDefault();
-  console.log("submitted file :O")
+  alert("Abgabe erfolgreich abgegeben!");
+  form.reset();
 }
 
 
@@ -45,7 +46,7 @@ window.onclick = function(event) {
 }
 
 form.addEventListener('submit', (event) => {
+  event.preventDefault();
   modal.style.display = "block";
   myFunction()
-  event.preventDefault();
 })
