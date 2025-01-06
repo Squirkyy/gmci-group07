@@ -1,6 +1,14 @@
  // Hole den Datei-Input und das Element zur Anzeige des Dateinamens
  const fileInput = document.getElementById('fileuploader');
  const fileNameDisplay = document.getElementById('file-name');
+ const form = document.getElementById('upfile')
+
+ form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    alert("Assignment")
+    fileInput.value = "";
+    form.reset();
+  })
 
  // Event-Listener für Änderungen im Datei-Input
  fileInput.addEventListener('change', function () {
@@ -158,8 +166,8 @@ function renderAssignments() {
             item.innerHTML = `
                 <div class="assignment">
                 <strong>${assignment.name}</strong> - Assignment Nr. ${assignment.number} <br>
-                Due Date: ${assignment.dueDate} <br>
-                Submitted: Yes (Score: ${assignment.score}) <br>
+                Abgabedatum: ${assignment.dueDate} <br>
+                Abgegeben?: Ja (Punkte: ${assignment.score}) <br>
                 <button class="button-email" onclick="">Download</button>
                 </div>
             `;
@@ -168,8 +176,8 @@ function renderAssignments() {
             item.innerHTML = `
                 <div class="assignment">    
                 <strong>${assignment.name}</strong> - Assignment Nr. ${assignment.number} <br>
-                Due Date: ${assignment.dueDate} <br>
-                Submitted: No <br>
+                Abgabedatum: ${assignment.dueDate} <br>
+                Abgegeben?: Nein <br>
                 </div>
             `;
         }
@@ -182,6 +190,6 @@ function renderAssignments() {
     const percentage = totalPossiblePoints > 0 ? ((totalAchievedPoints / totalPossiblePoints) * 100).toFixed(2) : 0;
 
     // Display total score, total possible points, and percentage
-    totalScoreContainer.innerHTML = `Total Score: ${totalAchievedPoints} / ${totalPossiblePoints} points (${percentage}% achieved, excluding the latest assignment)`;
+    totalScoreContainer.innerHTML = `Gesamt: ${totalAchievedPoints} / ${totalPossiblePoints} Punkte (${percentage}% erreicht, außgenommen das aktuelle Assignment)`;
 }
 
