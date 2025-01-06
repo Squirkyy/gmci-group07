@@ -28,6 +28,7 @@ function compareto(){
 }
 
 function send_to_heaven() {
+  event.preventDefault();
   console.log("submitted file :O")
 }
 
