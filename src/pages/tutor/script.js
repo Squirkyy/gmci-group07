@@ -24,7 +24,40 @@ function onLoad() {
         // Redirect to login if not logged in or wrong role
         window.location.href = '../../index.html';
     }
+
+
+    // fetch dropdown
+    const dropdown = document.getElementById("student_select");
+const students = [
+        {name: "Hubert Aiwanger 1", assignments: [
+            { id: 1, name: 'Assignment 1', number: 1, dueDate: '2024-02-01', isSubmitted: true, score: 18 },
+            { id: 2, name: 'Assignment 2', number: 2, dueDate: '2024-02-15', isSubmitted: true, score: 15 },
+            { id: 3, name: 'Assignment 3', number: 3, dueDate: '2024-03-01', isSubmitted: true, score: 20 },
+            { id: 4, name: 'Assignment 4', number: 4, dueDate: '2024-03-15', isSubmitted: true, score: 14 },
+            { id: 5, name: 'Assignment 5', number: 5, dueDate: '2024-04-01', isSubmitted: false },
+            { id: 6, name: 'Assignment 6', number: 6, dueDate: '2024-04-15', isSubmitted: true, score: 12 },
+            { id: 7, name: 'Assignment 7', number: 7, dueDate: '2024-05-01', isSubmitted: true, score: 17 },
+            { id: 8, name: 'Assignment 8', number: 8, dueDate: '2024-05-15', isSubmitted: true, score: 13 },
+            { id: 9, name: 'Assignment 9', number: 9, dueDate: '2024-06-01', isSubmitted: false },
+            { id: 10, name: 'Assignment 10', number: 10, dueDate: '2025-01-10', isSubmitted: false }
+            ]
+        },
+        {name: "Hubert Aiwanger 2", assignments: []},
+        {name: "Hubert Aiwanger 3", assignments: []},
+        {name: "Hubert Aiwanger 4", assignments: []},
+    ];
+
+
+    if (!dropdown) return;
+    // add students' names to dropdown
+    students.forEach(student => {
+        const item = document.createElement("option");
+        item.value = student.name;
+        item.innerText = student.name;
+        dropdown.appendChild(item);
+    });
 }
+
 
 function logout() {
     document.getElementById('logoutButton').addEventListener('click', function () {
@@ -54,25 +87,7 @@ function renderCourses() {
         { id: 3, name: 'Grundlagen der theoretischen Informatik', code: 'GTI', instructor: 'Prof. Dr. Vollmer', isActive: false, assignments: [] }
     ];
 
-    const students = [
-        {name: "Hubert Aiwanger 1", assignments: [
-            { id: 1, name: 'Assignment 1', number: 1, dueDate: '2024-02-01', isSubmitted: true, score: 18 },
-            { id: 2, name: 'Assignment 2', number: 2, dueDate: '2024-02-15', isSubmitted: true, score: 15 },
-            { id: 3, name: 'Assignment 3', number: 3, dueDate: '2024-03-01', isSubmitted: true, score: 20 },
-            { id: 4, name: 'Assignment 4', number: 4, dueDate: '2024-03-15', isSubmitted: true, score: 14 },
-            { id: 5, name: 'Assignment 5', number: 5, dueDate: '2024-04-01', isSubmitted: false },
-            { id: 6, name: 'Assignment 6', number: 6, dueDate: '2024-04-15', isSubmitted: true, score: 12 },
-            { id: 7, name: 'Assignment 7', number: 7, dueDate: '2024-05-01', isSubmitted: true, score: 17 },
-            { id: 8, name: 'Assignment 8', number: 8, dueDate: '2024-05-15', isSubmitted: true, score: 13 },
-            { id: 9, name: 'Assignment 9', number: 9, dueDate: '2024-06-01', isSubmitted: false },
-            { id: 10, name: 'Assignment 10', number: 10, dueDate: '2025-01-10', isSubmitted: false }
-            ]
-        },
-        {name: "Hubert Aiwanger 2", assignments: []},
-        {name: "Hubert Aiwanger 3", assignments: []},
-        {name: "Hubert Aiwanger 4", assignments: []},
-    ];
-
+    
     const container = document.getElementById("courses");
 
     if (!container) return;
@@ -122,19 +137,6 @@ function renderAssignments() {
         {name: "Hubert Aiwanger 3", ass: []},
         {name: "Hubert Aiwanger 4", ass: []},
     ];
-
-    // fetch dropdown
-    const dropdown = document.getElementById("student_select");
-
-    // add students' names to dropdown
-    students.forEach(student => {
-        const item = document.createElement("option");
-        item.value = student.name;
-        item.innerText = student.name;
-        dropdown.appendChild(item);
-    });
-
-
 
     const container = document.getElementById("assignments");
     const totalScoreContainer = document.getElementById("totalScore");

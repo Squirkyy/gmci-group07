@@ -24,18 +24,19 @@
 					<section class="form-section">
                         <h2>Abgabe für <i>GMCI Nr. 10</i></h2>
 						<form method="post" id="upfile" enctype="multipart/form-data">
-						    <label for="fileuploader">Hier deine Lösung uploaden</label> <br>
+							<label for="student_select">bearbeitender Student:</label><br>
+                            <select id=student_select></select>
+                            <br>
+                            <br>
+						    <label for="fileuploader">Hier Korrektur uploaden</label>
 							<input type="file" name="ufi" value="filename" id="fileuploader">
 							<!-- Benutzerdefinierter Button -->
 							<label for="fileuploader" class="button-upload">Datei hochladen</label>
 							<div><span class="file-name" id="file-name">Keine Datei ausgewählt</span></div>
 							<br>
-							<label for="student_select">Bearbeitender:</label><br>
-                            <select id=student_select>
-                                
-                            </select>
+
 							<br>
-							<input class="button-submit" type="submit" value="Assignment abgeben">
+							<input class="button-submit" type="submit" value="Korrektur hochladen">
 						</form>
 					</section>
 					<section class="previous">
@@ -43,8 +44,8 @@
 						<ul id="assignments"></ul>
 						<p id="totalScore"></p>
                         <h3>Fragen?</h3>
-						<p>Melde dich bei deinem Tutor und kläre gebenfalls Fragen, die du zu deiner Bewertung hast.</p>
-						<button class="button-email" onclick="location.href='mailto:vollmer@stud.uni-hannover.de?subject=Fragen%20zum%20GMCI%20Assignment';">Email Professor Vollmer</button>
+						<p>Bei Fragen an den Dozenten</p>
+						<button class="button-email" onclick="location.href='mailto:vollmer@stud.uni-hannover.de?subject=Fragen%20zum%20GMCI%20Assignment';">Email Professor Heimerdinger</button>
 					</section>
 				</div>
 			</main>
