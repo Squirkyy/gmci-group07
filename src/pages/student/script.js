@@ -130,7 +130,7 @@ function renderAssignments() {
                 <strong>${assignment.name}</strong> - Assignment Nr. ${assignment.number} <br>
                 Due Date: ${assignment.dueDate} <br>
                 Submitted: No <br>
-                <button onclick="location.href='mailto:vollmer@stud.uni-hannover.de?subject=Fragen%20zum%20GMCI%20Assignment%20${assignment.number}&body=Meine%20Damen%20und%20Herren,%0D%0A%0D%0AMein%20Name%20ist%20${username}.%20Ich%20habe%20eine%20Frage%20zum%20${assignment.name}%20(Assignment%20Nr.%20${assignment.number}).%0D%0A%0D%0AVielen%20Dank%20im%20Voraus.';">Email an den Tutor</button>
+                <button class="button-email" onclick="location.href='mailto:vollmer@stud.uni-hannover.de?subject=Fragen%20zum%20GMCI%20Assignment%20${assignment.number}&body=Meine%20Damen%20und%20Herren,%0D%0A%0D%0AMein%20Name%20ist%20${username}.%20Ich%20habe%20eine%20Frage%20zum%20${assignment.name}%20(Assignment%20Nr.%20${assignment.number}).%0D%0A%0D%0AVielen%20Dank%20im%20Voraus.';">Email an den Tutor</button>
                 </div>
             `;
         }
