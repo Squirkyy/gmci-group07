@@ -43,3 +43,37 @@ footer div {
 footer div:nth-child(3) {
     text-align: end;
 }
+
+#loginForm {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 10px 20px;
+    align-items: center; 
+}
+
+#loginForm label {
+    text-align: right; 
+    width: 100px;
+}
+
+#loginForm input {
+    width: 300px; 
+    padding: 5px;
+}
+
+#loginForm button {
+    grid-column: span 2;
+    width: 325pt;
+}
+
+button {
+    background-color: #078b8b; /* Green */
+    border: none;
+    color: white;
+    border-radius: 4px;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
